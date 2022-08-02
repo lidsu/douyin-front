@@ -1,0 +1,17 @@
+<!--components/video-item-v1/index.wxml-->
+<!-- <wxs src="../../utils/format.wxs" module="format"></wxs> -->
+<view class="item">
+  <view class="album">
+    <image class="image" width="180.5px"  src="{{serverUrl+item.coverPath}}" mode="widthFix">
+    </image>
+    <view class="info">
+        <view class="content">
+            {{item.nickname}}
+        </view>
+        <view class="duration">
+           {{item.videoSeconds+"s"}}
+         </view>
+      </view> 
+    </view>
+
+</view>

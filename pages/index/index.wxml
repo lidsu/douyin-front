@@ -1,0 +1,11 @@
+<view class="video">
+   <view class="item" wx:for="{{videoList}}"  wx:key="id">
+      <video-item-v1 item="{{item}}" 
+                     bindtap="showVideoInfo"
+                     data-item="{{item}}"
+                     serverUrl="{{serverUrl}}"
+                     class="content"
+                    >
+      </video-item-v1>
+   </view>
+</view>

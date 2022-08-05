@@ -46,6 +46,7 @@ Page({
           'content-type': 'application/json' // 默认值
         },
         success: function (res) {
+          console.log("登录成功")
            console.log(res.data)
           wx.hideLoading();
           if (res.data.status == 200) {
@@ -55,24 +56,25 @@ Page({
               icon: 'success',
               duration: 2000
             });
-            app.userInfo = res.data.data;
+            app.setGlobalUserInfo(res.data.data)
+            // app.userInfo = res.data.data;
             // fixme 修改原有的全局对象为本地缓存
             // app.setGlobalUserInfo(res.data.data);
             // 页面跳转
 
-            // var redirectUrl = me.redirectUrl;
-            // if (redirectUrl != null && redirectUrl != undefined && redirectUrl != '') {
-            //   wx.redirectTo({
-            //     url: redirectUrl,
-            //   })
-            // } else {
-            //   wx.redirectTo({
-            //     url: '../mine/mine',
-            //   })
-            // }
-            wx.redirectTo({
-              url: '../mine/mine',
-            })
+            var redirectUrl = me.redirectUrl;
+            if (redirectUrl != null && redirectUrl != undefined && redirectUrl != '') {
+              wx.redirectTo({
+                url: redirectUrl,
+              })
+            } else {
+              wx.redirectTo({
+                url: '../mine/mine',
+              })
+            }
+            // wx.redirectTo({
+            //   url: '../mine/mine',
+            // })
           } else if (res.data.status == 500) {
             // 失败弹出框
             wx.showToast({

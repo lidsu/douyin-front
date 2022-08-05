@@ -14,7 +14,6 @@
 
 .album .image {
   width: 100%;
-  height: 100%;
 }
 .image{
   height: 101.27px !important;

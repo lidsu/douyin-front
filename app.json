@@ -1,7 +1,15 @@
 {
   "pages": [
+
+
     "pages/index/index",
+    "pages/videoinfo/videoinfo",
     "pages/userLogin/login",
+    "pages/searchVideo/searchVideo",
+
+    "pages/videotest/videotest",
+
+
     "pages/chooseBgm/chooseBgm",
     "pages/mine/mine",
     "pages/userRegist/regist"

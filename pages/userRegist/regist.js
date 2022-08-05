@@ -37,7 +37,8 @@ Page({
                         icon:'none',
                         duration:3000
                       })
-                      app.userinfo=res.data.data
+                     app.setGlobalUserInfo(res.data.data)
+                      // app.userinfo=res.data.data
                  }else if(status==500){
                     wx.showToast({
                         title: res.data.msg,

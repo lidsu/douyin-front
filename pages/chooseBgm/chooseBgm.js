@@ -71,12 +71,13 @@ Page({
       })
       var serverUrl = app.serverUrl;
       // fixme 修改原有的全局对象为本地缓存
-      // var userInfo = app.getGlobalUserInfo();
+      var userInfo = app.getGlobalUserInfo();
 
       wx.uploadFile({
         url: serverUrl + '/video/upload',
+
         formData: {
-          userId: app.userInfo.id,    // fixme 原来的 app.userInfo.id
+          userId: userInfo.id,    // fix me 原来的 app.userInfo.id
           bgmId: bgmId,
           desc: desc,
           videoSeconds: duration,
@@ -112,7 +113,7 @@ Page({
             wx.uploadFile({
               url: serverUrl + '/video/uploadCover',
               formData: {
-                userId: app.userInfo.id,
+                userId: userInfo.id,
                 videoId: videoId
               },
               filePath: tmpCoverUrl,
